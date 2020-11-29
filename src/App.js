@@ -1,8 +1,26 @@
-import { useState } from 'react';
-import logo from './logo.svg';
+/*eslint-disable*/
+
+import Reack, { useState } from 'react';
 import './App.css';
+import { Link, Route, Switch } from 'react-router-dom';
+
+import best_item_list from './best_item_list.js';
+//Component
+import EventPage from './Component/EventPage';
+import NoticePage from './Component/NoticePage';
+import GuidePage from './Component/GuidePage';
+import LoginPage from './Component/LoginPage';
+import SignupPage from './Component/SignupPage';
+import StorePage from './Component/StorePage';
+import BrandPage from './Component/BrandPage';
+import ReviewPage from './Component/ReviewPage';
+import SupportPage from './Component/SupportPage';
+import CartPage from './Component/CartPage';
+import MenuPage from './Component/MenuPage';
 
 function App() {
+
+  let [_bList, bList] = useState(best_item_list);
 
 
   return (
@@ -12,108 +30,113 @@ function App() {
         <header>
           <section className="header-nav">
             <div className="logo_box">
-              <strong>별빛담은</strong>
+              <strong><Link to="/">별빛담은</Link></strong>
               <img src="./stamp.png"/>
             </div>
 
             <nav className="nav_list">
               <ul className="nav_list_top">
-                <li data-rol="menu1"><a href="#">이벤트</a></li>
-                <li data-rol="menu2"><a href="#">공지사항</a></li>
-                <li data-rol="menu3"><a href="#">이용가이드</a></li>
-                <li data-rol="menu4"><a href="#">로그인</a></li>
-                <li data-rol="menu4"><a href="#">회원가입</a></li>
+                <li><Link to="/event">이벤트</Link></li>
+                <li><Link to="/notice">공지사항</Link></li>
+                <li><Link to="/guide">이용가이드</Link></li>
+                <li><Link to="/login">로그인</Link></li>
+                <li><Link to="/signup">회원가입</Link></li>
               </ul>
 
               <ul className="nav_list_bottom">
-                <li data-rol="menu1"><a href="#">온라인스토어</a></li>
-                <li data-rol="menu2"><a href="#">브랜드스토리</a></li>
-                <li data-rol="menu3"><a href="#">리뷰</a></li>
-                <li data-rol="menu4"><a href="#">고객센터</a></li>
-                <li data-rol="menu4"><a href="#">장바구니</a></li>
-                <li data-rol="menu4"><a href="#">메뉴</a></li>
+                <li><Link to="/store">온라인스토어</Link></li>
+                <li><Link to="/brandstory">브랜드스토리</Link></li>
+                <li><Link to="/review">리뷰</Link></li>
+                <li><Link to="/support">고객센터</Link></li>
+                <li><Link to="/cart">장바구니</Link></li>
+                <li><Link to="/menu">메뉴</Link></li>
               </ul>
             </nav>
           </section>
         </header>
-        <section id="container">
-          <section className="best_items">
-            <h2>베스트 상품</h2>
-            <ul className="item_list_wrap">
-              <li className="item_list">
-                <div className="item">
-                  <img src="./stamp.png"/>
-                </div>
-                <div className="description">
-                  <h6>초신선 돼지 삼겹살 구이용</h6>
-                  <p>기준가 15,300원/600g<br/>
-                    (100g당 2,550원)
-                  </p>
-                </div>
-              </li>
-              <li className="item_list">
-                <div className="item">
-                  <img src="./stamp.png"/>
-                </div>
-                <div className="description">
-                  <h6>초신선 돼지 삼겹살 구이용</h6>
-                  <p>기준가 15,300원/600g<br/>
-                    (100g당 2,550원)
-                  </p>
-                </div>
-              </li>
-              <li className="item_list">
-                <div className="item">
-                  <img src="./stamp.png"/>
-                </div>
-                <div className="description">
-                  <h6>초신선 돼지 삼겹살 구이용</h6>
-                  <p>기준가 15,300원/600g<br/>
-                    (100g당 2,550원)
-                  </p>
-                </div>
-              </li>
-            </ul>
-            <ul className="item_list_wrap">
-              <li className="item_list">
-                <div className="item">
-                  <img src="./stamp.png"/>
-                </div>
-                <div className="description">
-                  <h6>초신선 돼지 삼겹살 구이용</h6>
-                  <p>기준가 15,300원/600g<br/>
-                    (100g당 2,550원)
-                  </p>
-                </div>
-              </li>
-              <li className="item_list">
-                <div className="item">
-                  <img src="./stamp.png"/>
-                </div>
-                <div className="description">
-                  <h6>초신선 돼지 삼겹살 구이용</h6>
-                  <p>기준가 15,300원/600g<br/>
-                    (100g당 2,550원)
-                  </p>
-                </div>
-              </li>
-              <li className="item_list">
-                <div className="item">
-                  <img src="./stamp.png"/>
-                </div>
-                <div className="description">
-                  <h6>초신선 돼지 삼겹살 구이용</h6>
-                  <p>기준가 15,300원/600g<br/>
-                    (100g당 2,550원)
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </section>
-        </section>
+
+        <Switch>
+          <Route exact path="/">
+            <section id="container">
+              <section className="best_items">
+                <h2>베스트 상품</h2>
+                <ul className="item_list_wrap">
+                  {
+                    _bList.map((item, i)=>{
+                      return <BestItem _bList={item} key={i}/>
+                    })
+                  }
+                </ul>
+              </section>
+            </section>
+          </Route>
+
+          <Route path="/event">
+            <EventPage></EventPage>
+          </Route>
+
+          <Route path="/notice">
+            <NoticePage></NoticePage>
+          </Route>
+
+          <Route path="/guide">
+            <GuidePage></GuidePage>
+          </Route>
+
+          <Route path="/login">
+            <LoginPage></LoginPage>
+          </Route>
+
+          <Route path="/signup">
+            <SignupPage></SignupPage>
+          </Route>
+
+          <Route path="/store">
+            <StorePage></StorePage>
+          </Route>
+
+          <Route path="/brandstory">
+            <BrandPage></BrandPage>
+          </Route>
+
+          <Route path="/review">
+            <ReviewPage></ReviewPage>
+          </Route>
+
+          <Route path="/support">
+            <SupportPage></SupportPage>
+          </Route>
+
+          <Route path="/cart">
+            <CartPage></CartPage>
+          </Route>
+
+          <Route path="/menu">
+            <MenuPage></MenuPage>
+          </Route>
+
+        </Switch>
+
       </section>
     </div>
   );
+}
+
+
+function BestItem(props){
+  return (
+    <li className="item_list">
+      <div className="item">
+        <img src={props._bList.sumnail}/>
+      </div>
+      <div className="description">
+        <h6>{ props._bList.subname }</h6>
+        <p>{ props._bList.price }<br/>
+          (100g당 1,250원)
+        </p>
+      </div>
+    </li>
+  )
 }
 
 export default App;
