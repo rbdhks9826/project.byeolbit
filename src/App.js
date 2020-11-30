@@ -58,6 +58,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <section id="container">
+              <section className="banner">
+                <div><span>뭔가가 필요해~</span></div>
+              </section>
               <section className="best_items">
                 <h2>베스트 상품</h2>
                 <ul className="item_list_wrap">
