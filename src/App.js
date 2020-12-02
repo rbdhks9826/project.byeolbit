@@ -1,22 +1,22 @@
 /*eslint-disable*/
 
-import Reack, { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 
-import best_item_list from './best_item_list.js';
-//Component
-import EventPage from './Component/EventPage';
-import NoticePage from './Component/NoticePage';
-import GuidePage from './Component/GuidePage';
-import LoginPage from './Component/LoginPage';
-import SignupPage from './Component/SignupPage';
-import StorePage from './Component/StorePage';
-import BrandPage from './Component/BrandPage';
-import ReviewPage from './Component/ReviewPage';
-import SupportPage from './Component/SupportPage';
-import CartPage from './Component/CartPage';
-import MenuPage from './Component/MenuPage';
+import best_item_list from './tempDataFolder/best_item_list.js';
+//Views
+import EventPage from './View/EventPage';
+import NoticePage from './View/NoticePage';
+import GuidePage from './View/GuidePage';
+import LoginPage from './View/LoginPage';
+import SignupPage from './View/SignupPage';
+import StorePage from './View/StorePage';
+import BrandPage from './View/BrandPage';
+import ReviewPage from './View/ReviewPage';
+import SupportPage from './View/SupportPage';
+import CartPage from './View/CartPage';
+import MenuPage from './View/MenuPage';
 
 function App() {
 
