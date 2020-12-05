@@ -5,6 +5,10 @@ import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 
 import best_item_list from './tempDataFolder/best_item_list.js';
+
+//Components
+import Items from './Component/Item';
+
 //Views
 import EventPage from './View/EventPage';
 import NoticePage from './View/NoticePage';
@@ -61,16 +65,11 @@ function App() {
               <section className="banner">
                 <div><span>뭔가가 필요해~</span></div>
               </section>
-              <section className="best_items">
+              <section className="bestitem">
                 <h2>베스트 상품</h2>
-                <ul className="item_list_wrap">
-                  {
-                    _bList.map((item, i)=>{
-                      return <BestItem _bList={item} key={i}/>
-                    })
-                  }
-                </ul>
+                <Items list={_bList}></Items>
               </section>
+
             </section>
           </Route>
 
@@ -123,23 +122,6 @@ function App() {
       </section>
     </div>
   );
-}
-
-
-function BestItem(props){
-  return (
-    <li className="item_list">
-      <div className="item">
-        <img src={props._bList.sumnail}/>
-      </div>
-      <div className="description">
-        <h6>{ props._bList.subname }</h6>
-        <p>{ props._bList.price }<br/>
-          (100g당 1,250원)
-        </p>
-      </div>
-    </li>
-  )
 }
 
 export default App;

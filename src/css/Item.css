@@ -1,0 +1,21 @@
+@charset "utf-8";
+@import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
+
+
+/*layout*/
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'nanumsquare';
+}
+
+/*Best Item List*/
+.items{width: 60%; height: 1000px; margin: 0 auto;}
+.items .item_list_wrap{margin-left: auto; margin-right: auto;}
+.items .item_list_wrap .item_list{display: inline-block; margin: 10px;}
+.items .item_list_wrap .item_list .item{width: 350px; height: 350px; background: #efefef; padding-top: 150px;}
+.items .item_list_wrap .item_list .item img{display: block; width: 50px; height: 50px; margin: 0 auto;}
+.items .item_list_wrap .item_list .description{width:350px; height: 100px; padding-left: 20px;}
+.items .item_list_wrap .item_list .description h6{font-size: 19px; font-weight: bold; color: black;}
+.items .item_list_wrap .item_list .description p{font-size: 17px; margin-top: 10px;}
