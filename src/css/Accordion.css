@@ -10,12 +10,11 @@
 .container {
   width: 100%;
   max-width: 480px;
-  margin: auto;
+  margin-left: 30px;
 }
 .accordion-wrap {
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
   color: #000;
 }
 
@@ -30,14 +29,17 @@
 
 .accordion-header .container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .accordion-header h4 {
-  cursor: pointer;
   letter-spacing: 1.2px;
   font-weight: 600;
+}
+
+.accordion-header span {
+  cursor: pointer;
+  margin-left: 40px;
 }
 
 .accordion-content {
@@ -50,7 +52,7 @@
 }
 .accordion-content.show{
   height: auto;
-  padding: 30px 100px 70px 100px;
+  padding: 30px 50px 70px 50px;
   background-color: #eee;
   background-size: 100px auto;
   visibility: visible;

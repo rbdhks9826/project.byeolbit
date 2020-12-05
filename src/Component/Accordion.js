@@ -6,14 +6,15 @@ const Accordion = (props)=>{
     <div className="accordion-wrap">
       <div className="accordion-header">
         <div className="container">
-          <h4 onClick={() => props.setActive(props.title) }><span>Q1</span>{props.title}</h4>
+          <h4>{props.data.title}</h4>
+          <span onClick={() => props.setActive(props.data.id) }>{props.data.question}</span>
         </div>
       </div>
 
 
-      <div className={"accordion-content" + (props.active === props.title ? " show" : "" )}>
+      <div className={"accordion-content" + (props.active === props.data.id ? " show" : "" )}>
         <div className="container">
-          <p>도서와 관련된 실습 소스는 받을 수 있나요?</p>
+          <p>{props.data.content}</p>
         </div>
       </div>
 

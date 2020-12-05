@@ -1,4 +1,6 @@
 import Reack, { useState } from 'react';
+import '../css/BrandPage.css';
+
 
 function BrandPage() {
   return (
