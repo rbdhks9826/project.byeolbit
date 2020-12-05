@@ -1,8 +1,13 @@
-import Reack, { useState } from 'react';
+import { useState } from 'react';
+import '../css/EventPage.scss'
+import EventItem from '../Component/EventItem.js';
 
 function EventPage() {
   return (
-    <div>이벤트 페이지 입니다.</div>
+    <div className="event-wrap">
+      1232323
+      <EventItem></EventItem>
+    </div>
   )
 }
 
