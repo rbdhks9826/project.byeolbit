@@ -12,7 +12,7 @@ const Accordion = (props)=>{
       </div>
 
 
-      <div className={"accordion-content" + (props.active === props.data.id ? " show" : "" )}>
+      <div className={ "accordion-content" + (props.active === props.data.id ? " show" : "" )}>
         <div className="container">
           <p>{props.data.content}</p>
         </div>
