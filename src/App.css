@@ -59,18 +59,8 @@ html,body{overflow:hidden;height:100%;}
 .banner{width: 65%; height: 350px; margin: 30px auto;}
 .banner div{width: 100%; height: 100%; background: #eee;}
 .banner div span{display: block; padding-top: 150px;}
-
-/*Best Item List*/
-#container .best_items{width: 60%; height: 1000px; margin: 0 auto;}
-#container .best_items h2{font-size: 50px; text-align: center; color: black; margin-bottom: 50px; margin-top: 50px;}
-#container .best_items .item_list_wrap{margin-left: auto; margin-right: auto;}
-#container .best_items .item_list_wrap .item_list{display: inline-block; margin: 10px;}
-#container .best_items .item_list_wrap .item_list .item{width: 350px; height: 350px; background: #efefef; padding-top: 150px;}
-#container .best_items .item_list_wrap .item_list .item img{display: block; width: 50px; height: 50px; margin: 0 auto;}
-#container .best_items .item_list_wrap .item_list .description{width:350px; height: 100px; padding-left: 20px;}
-#container .best_items .item_list_wrap .item_list .description h6{font-size: 19px; font-weight: bold; color: black;}
-#container .best_items .item_list_wrap .item_list .description p{font-size: 17px; margin-top: 10px;}
-
+/*best item*/
+.bestitem h2{font-size: 50px; text-align: center; color: black; margin-bottom: 50px; margin-top: 50px;}
 
 
 .App-logo {

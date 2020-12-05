@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import '../css/StorePage.css';
+import itemList from '../tempDataFolder/item_list.js';
+
+//Component
+import Items from '../Component/Item';
+
 
 function StorePage() {
+
+  let arr = ['전체보기', '청국장', '된장', '고추장', '간장', '장아찌'];
+  let [_title, setTitle] = useState("전체보기");
+
   return (
     <section className="content-wrap">
       <div className="main-photo">
@@ -15,14 +24,17 @@ function StorePage() {
       <div className="item-nav-wrap">
         <div className="item-nav">
           <ul>
-            <li>청국장</li>
-            <li>된장</li>
-            <li>고추장</li>
-            <li>간장</li>
-            <li>장아찌</li>
+            {
+              arr.map((item, i)=> {
+                return <li>{item}</li>
+              })
+            }
           </ul>
         </div>
       </div>
+
+      <Items list={itemList}></Items>
+
     </section>
   )
 }
