@@ -1,4 +1,4 @@
-import Reack, { useState } from 'react';
+import { useState } from 'react';
 
 function ReviewPage() {
   return (
