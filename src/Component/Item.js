@@ -4,18 +4,29 @@ import '../css/Item.css';
 function Items(props) {
 
     let itemlist = props.list;
+    let title = props.title;
 
     return (
-      <section className="items">
-        
+      <div className="items">
+
         <ul className="item_list_wrap">
           {
+
             itemlist.map((item, i)=>{
-              return <Item item={item} key={i}/>
+              if(title === "전체보기")
+                return <Item item={item} key={i}/>
+
+              if(title !== undefined){
+                if(item.name === title)
+                  return <Item item={item} key={i}/>
+              }
+              else{
+                return <Item item={item} key={i}/>
+              }
             })
           }
         </ul>
-      </section>
+      </div>
     )
 }
 
