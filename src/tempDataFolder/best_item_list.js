@@ -58,25 +58,5 @@ export default [
     weight: "500g",
     content: "",
     price: "11,000원"
-  },
-
-  {
-    id: 12,
-    name: "고추장",
-    sumnail: "./stamp.png",
-    subname: "별빛담은 마늘찹쌀고추장",
-    weight: "500g",
-    content: "",
-    price: "12,000원"
-  },
-
-  {
-    id: 14,
-    name: "간장",
-    sumnail: "./stamp.png",
-    subname: "별빛담은 국간장",
-    weight: "900g",
-    content: "",
-    price: "12,000원"
   }
 ]

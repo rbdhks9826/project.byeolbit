@@ -5,7 +5,7 @@ const Accordion = (props)=>{
   return (
     <div className="accordion-wrap">
       <div className="accordion-header">
-        <div className="container">
+        <div className="title-container">
           <h4>{props.data.title}</h4>
           <span onClick={() => props.setActive(props.data.id) }>{props.data.question}</span>
         </div>
@@ -13,7 +13,7 @@ const Accordion = (props)=>{
 
 
       <div className={ "accordion-content" + (props.active === props.data.id ? " show" : "" )}>
-        <div className="container">
+        <div className="content-container">
           <p>{props.data.content}</p>
         </div>
       </div>

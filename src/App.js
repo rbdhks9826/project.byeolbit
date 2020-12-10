@@ -1,13 +1,8 @@
 /*eslint-disable*/
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
-
-import best_item_list from './tempDataFolder/best_item_list.js';
-
-//Components
-import Items from './Component/Item';
 
 //Views
 import EventPage from './View/EventPage';
@@ -21,11 +16,14 @@ import ReviewPage from './View/ReviewPage';
 import SupportPage from './View/SupportPage';
 import CartPage from './View/CartPage';
 import MenuPage from './View/MenuPage';
+import MainPage from './View/MainPage';
 
 function App() {
 
-  let [_bList, bList] = useState(best_item_list);
-
+  window.addEventListener('resize', ()=>{
+    element[0].style.maxHeight = window.innerHeight + "px";
+  });
+  let element = document.getElementsByClassName('wrap');
 
   return (
     <div className="App">
@@ -59,18 +57,10 @@ function App() {
           </section>
         </header>
 
+        <section className="container">
         <Switch>
           <Route exact path="/">
-            <section id="container">
-              <section className="banner">
-                <div><span>뭔가가 필요해~</span></div>
-              </section>
-              <section className="bestitem">
-                <h2>베스트 상품</h2>
-                <Items list={_bList}></Items>
-              </section>
-
-            </section>
+            <MainPage></MainPage>
           </Route>
 
           <Route path="/event">
@@ -118,7 +108,10 @@ function App() {
           </Route>
 
         </Switch>
-
+        </section>
+      <footer>
+        footer
+      </footer>
       </section>
     </div>
   );

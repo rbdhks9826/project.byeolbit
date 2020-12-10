@@ -26,14 +26,14 @@ function StorePage() {
           <ul>
             {
               arr.map((item, i)=> {
-                return <li>{item}</li>
+                return <li onClick={ ()=> { setTitle(item) } }>{item}</li>
               })
             }
           </ul>
         </div>
       </div>
 
-      <Items list={itemList}></Items>
+      <Items list={itemList} title={_title} setTitle={setTitle}></Items>
 
     </section>
   )
